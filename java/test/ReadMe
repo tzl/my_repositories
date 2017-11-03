@@ -1,0 +1,9 @@
+命令行中运行nmake MainClz="clzName"就编译clzName 相关的Java文件.
+
+1: 所有的java main class都在src/main目录下
+2: 有价值的工具都在src/util目录下
+3: clzName用到的其他文件全部在src/misc目录下
+4: 所有生成的class文件在bin目录下
+
+注意:
+   当编译不过时,请修改Makefile,有可能是clzName依赖的java文件在src/misc下的package中.

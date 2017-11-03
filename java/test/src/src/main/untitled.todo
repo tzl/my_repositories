@@ -1,0 +1,34 @@
+ ☐ +---------------------------+------------------+-------------+-------------+
+   |函数名字                    |功能               |onError      |是否有回调    |
+ ☐ +---------------------------+------------------+-------------+-------------+
+ ☐ |callIDPotos                |身份证识别          | Y           |          |
+ ☐ |getUserAgent               |获取UA             | Y            |           |
+ ☐ |callCamera                 |调用相机            | y            |           |
+ ☐ |detectBankCard             |银行卡识别          |  N           | 部分       |
+ ☐ |initpay xxx                |                  |  N            |N
+ ☐ |dopay                      |支付               | N            | N         |
+ ☐ |addseniorWz  ---------------
+ ☐ |audioSeekTo  ---------------
+ ☐ |audioSpeedFF  ---------------
+ ☐ |login  ---------------
+ ☐ |addseniorWz  ---------------
+ ☐ |doBindCard                 |绑卡               | N            | Y        |
+ ☐ |bdLogin                    |登录               | N            | Y
+ ☐ |accessWalletService        |统一入口            | 部分         | 部分       |
+ ☐ |doRnAuth                   |实名认证            | Y           |            |
+ ☐ |callQRCodeScanner          |二维码识别          | N           |  部分       |
+ ☐ |checkAudioPermission       |智能客服录音开始     | Y           |            |
+ ☐ |endAudioRecord             |智能客服录音结束     | Y           |            |
+ ☐ |customerService            |智能客服            | Y           |            |
+ ☐ |callWalletFaceNativeVoice  |活体识别            | 部分         |            |
+ ☐ |digest                     |消息摘要            | Y           |            |
+ ☐ |selectPhonefromAdressBook  |获取通讯            | N           |  Y          |
+ ☐ |doCrypto                   |加密               | Y           |            |
+ ☐ |bindcardIndepende          |独立绑卡            | Y           |            |
+ ☐ |setTitle                   |自定义标题          | Y           |            |
+ ☐ |onStatEvent                |H5埋点             | Y           |            |
+ ☐ |openInBrowser              |打开网页            | 部分        |     Y       |
+ ☐ |setMenu                    |自定义菜单          | Y           |           |
+ ☐ |showCouponDetail           |显示优惠券          | 部分        |     Y       |
+
+ ☐

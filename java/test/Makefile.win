@@ -1,0 +1,57 @@
+
+#Display build information
+#!cmdswitches +D
+#Suppress executed-commands display
+!cmdswitches -S
+
+ROOT = .
+ClassesPath = $(ROOT)/bin
+
+#Never leave out the semicolon on the end of this line,
+#otherwise it doesn't make effect
+JARS = $(PluginPath)/org.eclipse.swt.win32.win32.x86_3.5.2.v3557f.jar;$(PluginPath)/org.eclipse.core.runtime_3.5.0.v20090525.jar;
+
+!ifndef MainClz
+MainClz = DigestTest
+!endif
+
+JAVA_SRC = $(ROOT)/src/util/*.java \
+           $(ROOT)/src/util/threadpool/*.java \
+           $(ROOT)/src/util/zip/*.java \
+           $(Digest_SRC)
+
+Misc_SRC = $(ROOT)\src\main\$(MainClz).java \
+           $(ROOT)\src\util\HexaUtil.java
+
+ZanKuImage_SRC = $(ROOT)/src/misc/HttpDownloader.java \
+                 $(ROOT)/src/misc/ExtractTxtZipUrl.java \
+                 $(ROOT)/src/main/ZangKuImages.java
+
+# java main.HttpImgDld [256339.zip ../pic/256339]
+ImgZip_SRC = $(ROOT)/src/misc/HttpDownloader.java \
+             $(ROOT)/src/misc/ImgZipEntryHandler.java \
+             $(ROOT)/src/main/HttpImgDld.java
+
+# java main.digest [../pic]
+Digest_SRC = $(ROOT)/src/misc/CollectFileDigest.java \
+             $(ROOT)/src/main/DigestTest.java
+
+
+all : compile run
+
+compile :
+	@cls
+	@echo.------------------------------------------------
+	@type $(ROOT)\src\main\$(MainClz).java
+	@echo.
+	@echo.------------------------------------------------
+	@if not exist "$(ClassesPath)/" mkdir "$(ClassesPath)"
+	javac -nowarn -d $(ClassesPath) -classpath "$(JARS)" -sourcepath $(ROOT)/src $(JAVA_SRC)
+
+run :
+	cd "$(ClassesPath)"
+	cls
+	java -classpath "$(JARS)" main.$(MainClz) I:\DCIM
+
+clean :
+	@rd /S /Q "$(ClassesPath)"
